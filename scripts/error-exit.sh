@@ -2,8 +2,7 @@
 
 PROGNAME=$(basename $0)
 
-error_exit()
-{
+function error_exit {
 	echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
 	exit 1
 }
