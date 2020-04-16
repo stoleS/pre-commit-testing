@@ -3,7 +3,7 @@
 STASH_NAME="pre-commit-$(date +%s)"
 git stash save -q --keep-index $STASH_NAME
 
-sh $PWD/scripts/run-checks.sh
+#sh $PWD/scripts/run-checks.sh
 TEST_RESULT=$?
 
 STASHES=$(git stash list)
