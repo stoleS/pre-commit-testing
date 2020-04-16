@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo '-> running tests...'
-npm run test || >&2
+npm run test || exit 1
 echo 'done'
 
 echo '-> running lint...'
-npm run lint
+npm run lint || exit 1
 echo 'done'

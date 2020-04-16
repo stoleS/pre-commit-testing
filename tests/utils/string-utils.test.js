@@ -6,7 +6,7 @@ describe('String utils tests', () => {
 
     names.forEach(name => {
       const res = sayHello(name)
-      expect(res).toBe(`Hello ${name}`)
+      expect(res).toBe(`Hello ${name}!`)
     })
   })
 })
