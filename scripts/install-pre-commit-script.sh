@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. $(dirname "$0")/error-exit.sh
+. $PWD/scripts/error-exit.sh
 
 SCRIPTS_LOC="scripts"
 PRE_COMMIT_LOC=".git/hooks/pre-commit"
