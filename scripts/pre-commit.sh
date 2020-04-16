@@ -1,1 +1,1 @@
-echo 'PRE_COMMIT_MSG'
+echo 'PRE_COMMIT_MSG_TEST'
