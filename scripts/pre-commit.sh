@@ -1,1 +1,1 @@
-echo "PRE_COMMIT"
+echo 'PRE_COMMIT'
