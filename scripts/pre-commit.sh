@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. $(dirname "$0")/error-exit.sh
+source $(dirname "$0")/error-exit.sh
 
 STASH_NAME="pre-commit-$(date +%s)"
 git stash save -q --keep-index $STASH_NAME
