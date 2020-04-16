@@ -14,5 +14,6 @@ if [[ $STASHES =~ "$STASH_NAME" ]]; then
 fi
 
 [ $CHECKS_RESULT -ne 0 ] && 2>/dev/null && error_exit "Checks failed to pass! Commit aborted!"
+echo '-> Check passed successfully! Commit alowed!'
 exit 0
 
