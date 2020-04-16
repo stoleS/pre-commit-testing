@@ -1,7 +1,7 @@
 #!/bin/sh
 
 git stash -q --keep-index
-sh $PWD/scripts/run_tests.sh
+sh $PWD/scripts/run-tests.sh
 RESULT=$?
 git stash pop -q
 [ $RESULT -ne 0 ] && exit 1

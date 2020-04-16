@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "sh ./scripts/run-tests.sh",
+    "test": "jest",
     "lint": "standard",
     "install-pre-commit": "sh ./scripts/install-pre-commit-script.sh"
   },
