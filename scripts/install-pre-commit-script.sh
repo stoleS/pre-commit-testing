@@ -1,11 +1,6 @@
 #!/bin/sh
-PROGNAME=$(basename $0)
 
-error_exit()
-{
-	echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
-	exit 1
-}
+. $(dirname "$0")/error-exit.sh
 
 SCRIPTS_LOC="scripts"
 PRE_COMMIT_LOC=".git/hooks/pre-commit"
