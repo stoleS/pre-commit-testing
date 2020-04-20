@@ -1,11 +1,11 @@
 #!/bin/bash
 
-. $PWD/scripts/error-exit.sh
+. $PWD/scripts/message-handler.sh
 
 STASH_NAME="pre-commit-$(date +%s)"
 git stash save -q --keep-index $STASH_NAME
 
-bash $PWD/scripts/run-checks.sh
+. $PWD/scripts/check-changes.sh
 CHECKS_RESULT=$?
 
 STASHES=$(git stash list)
@@ -14,6 +14,6 @@ if [[ $STASHES =~ "$STASH_NAME" ]]; then
 fi
 
 [ $CHECKS_RESULT -ne 0 ] && 2>/dev/null && error_exit "Checks failed to pass! Commit aborted!"
-echo '-> Checks passed successfully! Commit alowed!'
+echo_info 'Checks passed successfully! Commit alowed!'
 exit 0
 

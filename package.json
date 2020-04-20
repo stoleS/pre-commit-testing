@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "lint": "standard",
     "install-pre-commit": "sh ./scripts/install-pre-commit-script.sh"
   },
   "repository": {
@@ -23,10 +21,14 @@
     "standard": "^14.3.3"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "jest": {
     "testEnvironment": "node",
-    "coveragePathIgnorePatterns": ["/node_modules/"]
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }

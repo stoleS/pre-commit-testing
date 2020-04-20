@@ -1,9 +1,11 @@
 #!/bin/bash
 
-echo '-> running lint...'
-npm run lint || exit 1
-echo 'done'
+. $PWD/scripts/message-handler.sh
 
-echo '-> running tests...'
+echo_info 'Running lint...'
+npm run lint || exit 1
+echo_info 'Lint finished successfully!'
+
+echo_info 'Running tests...'
 npm run test || exit 1
-echo 'done'
+echo_info 'Tests finished successfully!'
