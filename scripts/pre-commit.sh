@@ -47,9 +47,11 @@ for changed in "${CHANGED[@]}"; do
   cd $changed
   current=$(basename "$PWD")
   echo_info "Running checks for /$current service..."
-  CHECKS_RESULT=$(npm run precommit)
+  npm run precommit || exit 1
   echo_info "Checks passed successfully for /$current service!"
 done
+
+CHECKS_RESULT=$?
 
 STASHES=$(git stash list)
 if [[ $STASHES =~ "$STASH_NAME" ]]; then
