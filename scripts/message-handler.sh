@@ -12,3 +12,8 @@ echo_info()
 {
 	echo "[INFO]: ${1}"
 }
+
+echo_error()
+{
+	echo "[ERROR]: ${1}"
+}
