@@ -51,6 +51,6 @@ for changed in "${CHANGED[@]}"; do
 done
 
 [[ $CHECKS_RESULT -ne 0 ]] && 2>/dev/null && error_exit "Commit aborted!"
-echo_info "Checks passed successfully! Commit alowed!"
+echo_info "Commit alowed!"
 exit 0
 
