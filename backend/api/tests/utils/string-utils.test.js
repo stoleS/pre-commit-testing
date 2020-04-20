@@ -1,7 +1,7 @@
 const { sayHello } = require('../../utils/string-utils')
 
 describe('String utils tests', () => {
-  it('should return provided name in message', () => {
+  it('should return provided name in message!', () => {
     const names = ['Predrag', 'Milos', 'Djordje']
 
     names.forEach(name => {
