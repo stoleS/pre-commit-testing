@@ -47,18 +47,15 @@ for changed in "${CHANGED[@]}"; do
   cd $changed
   current=$(basename "$PWD")
   echo_info "Running checks for /$current service..."
-  npm run precommit
+  npm run precommit && 2>/dev/null && error_exit "Checks failed to pass for /$current service! Commit aborted!"
   echo_info "Checks passed successfully for /$current service!"
 done
-
-CHECKS_RESULT=$?
 
 STASHES=$(git stash list)
 if [[ $STASHES =~ "$STASH_NAME" ]]; then
   git stash pop -q
 fi
 
-[ $CHECKS_RESULT -ne 0 ] && 2>/dev/null && error_exit "Checks failed to pass! Commit aborted!"
 echo_info "Checks passed successfully! Commit alowed!"
 exit 0
 
