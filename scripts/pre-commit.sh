@@ -2,7 +2,7 @@
 
 . $PWD/scripts/message-handler.sh
 
-STAGED=$(git diff --name-only)
+STAGED=$(git diff --name-only --cached)
 
 STASH_NAME="pre-commit-$(date +%s)"
 git stash save -q --keep-index $STASH_NAME
