@@ -49,7 +49,7 @@ for changed in "${CHANGED[@]}"; do
   echo_info "Running checks for /$current service..."
   npm run precommit
   CHECKS_RESULT=$?
-  [ $CHECKS_RESULT -ne 0 ] && echo_error "Checks failed to pass for /$current service!" && break
+  [[ $CHECKS_RESULT -ne 0 ]] && echo_error "Checks failed to pass for /$current service!" && break
   echo_info "Checks passed successfully for /$current service!"
 done
 
@@ -58,7 +58,7 @@ if [[ $STASHES =~ "$STASH_NAME" ]]; then
   git stash pop -q
 fi
 
-[ $CHECKS_RESULT -ne 0 ] && 2>/dev/null && error_exit "Commit aborted!"
+[[ $CHECKS_RESULT -ne 0 ]] && 2>/dev/null && error_exit "Commit aborted!"
 echo_info "Checks passed successfully! Commit alowed!"
 exit 0
 
