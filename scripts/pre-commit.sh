@@ -2,10 +2,10 @@
 
 . $PWD/scripts/message-handler.sh
 
+STAGED=$(git diff --name-only)
+
 STASH_NAME="pre-commit-$(date +%s)"
 git stash save -q --keep-index $STASH_NAME
-
-STAGED=$(git diff --name-only)
 
 package="/package.json"
 git="/.git"
@@ -24,7 +24,7 @@ find_package() {
 }
 
 # Main function that collects all package.json services 
-# which have changed files and precommit script
+# that have changed files and precommit script
 SERVICES=()
 set -f; IFS=$'\n'
 for staged in $STAGED; do
@@ -41,14 +41,14 @@ IFS=$' '
 CHANGED=($(printf "%s\n" "${SERVICES[@]}" | sort -u | tr '\n' ' '))
 unset IFS
 
-# Loop through changed directories which have precommit script
+# Loop through changed directories that have precommit script
 # and run it
 for changed in "${CHANGED[@]}"; do
   cd $changed
   current=$(basename "$PWD")
-  echo_info "Running checks for ~$current~ service..."
+  echo_info "Running checks for /$current service..."
   npm run precommit
-  echo_info "Checks passed successfully for ~$current~ service!"
+  echo_info "Checks passed successfully for /$current service!"
 done
 
 CHECKS_RESULT=$?
