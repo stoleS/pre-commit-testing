@@ -2,7 +2,7 @@ const { sayHello } = require('../../utils/string-utils')
 
 describe('String utils tests', () => {
   it('should return provided name in message', () => {
-    const names = ['Predrag', 'Milos', 'Djordje']
+    const names = ['Predrag', 'Milos', 'Djordje', 'Petar']
 
     names.forEach(name => {
       const res = sayHello(name)
