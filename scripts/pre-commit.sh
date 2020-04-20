@@ -4,9 +4,6 @@
 
 STAGED=$(git diff --name-only --cached)
 
-STASH_NAME="pre-commit-$(date +%s)"
-git stash save -q --keep-index $STASH_NAME
-
 package="/package.json"
 git="/.git"
 
@@ -52,11 +49,6 @@ for changed in "${CHANGED[@]}"; do
   [[ $CHECKS_RESULT -ne 0 ]] && echo_error "Checks failed to pass for /$current service!" && break
   echo_info "Checks passed successfully for /$current service!"
 done
-
-STASHES=$(git stash list)
-if [[ $STASHES =~ "$STASH_NAME" ]]; then
-  git stash pop -q
-fi
 
 [[ $CHECKS_RESULT -ne 0 ]] && 2>/dev/null && error_exit "Commit aborted!"
 echo_info "Checks passed successfully! Commit alowed!"
