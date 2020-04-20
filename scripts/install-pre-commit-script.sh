@@ -12,7 +12,7 @@ if [ -f "$PRE_COMMIT_LOC" ]; then
   echo_info 'Older version found!'
   echo_info 'Removing older version...'
   rm $PRE_COMMIT_LOC 2>/dev/null || error_exit "Failed to remove older pre-commit version!"
-  echo_info 'Older version successfully removed!'
+  echo_info 'Older version removed successfully!'
 else 
     echo_info "Older version not found!"
 fi
