@@ -1,5 +1,5 @@
 const sayHello = name => `Hello ${name}!`
 
-const thisIsTheWay = () => {}
+const thisIsTheWay = () => { return 'hello' }
 
 module.exports = { sayHello, thisIsTheWay }
