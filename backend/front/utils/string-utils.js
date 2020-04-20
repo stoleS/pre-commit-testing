@@ -1,3 +1,5 @@
 const sayHello = name => `Hello ${name}!`
 
-module.exports = { sayHello }
+const thisIsTheWay = () => {}
+
+module.exports = { sayHello, thisIsTheWay }
